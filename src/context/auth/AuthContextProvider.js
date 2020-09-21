@@ -2,12 +2,12 @@ import React, { createContext, useState } from 'react';
 
 export const AuthContext = createContext(false);
 
-const AuthContextProvider = () => {
-  const [token, setToken] = useState('');
+const AuthContextProvider = ({ children }) => {
+  const [token, setToken] = useState('aa');
 
   return (
     <AuthContext.Provider isAuth={!!token} setToken={setToken}>
-      {this.props.children}
+      {children}
     </AuthContext.Provider>
   );
 };

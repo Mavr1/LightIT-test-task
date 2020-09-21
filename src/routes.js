@@ -18,15 +18,6 @@ export default [
     inNavmenu: true,
   },
   {
-    path: '/login',
-    label: 'Login',
-    exact: false,
-    component: () => <LoginPage />,
-    private: false,
-    restricted: true,
-    inNavmenu: true,
-  },
-  {
     path: '/products',
     label: 'Products',
     exact: false,
@@ -34,6 +25,15 @@ export default [
     private: false,
     restricted: false,
     inNavmenu: true,
+  },
+  {
+    path: '/login',
+    label: 'Login',
+    exact: false,
+    component: () => <LoginPage />,
+    private: false,
+    restricted: true,
+    inNavmenu: false,
   },
   {
     path: '/product',

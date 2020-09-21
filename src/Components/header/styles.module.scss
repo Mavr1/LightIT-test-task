@@ -4,9 +4,27 @@
 
 .headerContainer {
   display: flex;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 .navList {
   display: flex;
+}
+
+.navItem {
+  transition: all 200ms;
+}
+.navItem:hover {
+  transform: scale(1.1);
+}
+
+.navItem:not(:last-child) {
+  margin-right: 16px;
+}
+
+.loginLink {
+  padding: 12px;
+  border: 1px solid #bbb;
 }
