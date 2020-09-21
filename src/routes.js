@@ -5,47 +5,52 @@ import {
   ProductsPage,
   ProductPage,
   FavoritesPage,
-} from './Pages';
+} from './pages';
 
 export default [
   {
     path: '/',
-    label: 'HomePage',
+    label: 'Home',
     exact: true,
     component: () => <HomePage />,
     private: false,
     restricted: false,
+    inNavmenu: true,
   },
   {
     path: '/login',
-    label: 'LoginPage',
+    label: 'Login',
     exact: false,
     component: () => <LoginPage />,
     private: false,
     restricted: true,
+    inNavmenu: true,
   },
   {
     path: '/products',
-    label: 'ProductsPage',
+    label: 'Products',
     exact: false,
     component: () => <ProductsPage />,
     private: false,
     restricted: false,
+    inNavmenu: true,
   },
   {
     path: '/product',
-    label: 'ProductPage',
+    label: 'Product',
     exact: false,
     component: () => <ProductPage />,
     private: false,
     restricted: false,
+    inNavmenu: false,
   },
   {
     path: '/favorites',
-    label: 'FavoritesPage',
+    label: 'Favorites',
     exact: false,
     component: () => <FavoritesPage />,
     private: true,
     restricted: false,
+    inNavmenu: false,
   },
 ];
