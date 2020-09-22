@@ -3,7 +3,7 @@ import {
   HomePage,
   LoginPage,
   ProductsPage,
-  ProductPage,
+  ProductDetailsPage,
   FavoritesPage,
 } from './pages';
 
@@ -16,6 +16,15 @@ export default [
     private: false,
     restricted: false,
     inNavmenu: true,
+  },
+  {
+    path: '/products/:id',
+    label: 'Product',
+    exact: false,
+    component: () => <ProductDetailsPage />,
+    private: false,
+    restricted: false,
+    inNavmenu: false,
   },
   {
     path: '/products',
@@ -33,15 +42,6 @@ export default [
     component: () => <LoginPage />,
     private: false,
     restricted: true,
-    inNavmenu: false,
-  },
-  {
-    path: '/product',
-    label: 'Product',
-    exact: false,
-    component: () => <ProductPage />,
-    private: false,
-    restricted: false,
     inNavmenu: false,
   },
   {

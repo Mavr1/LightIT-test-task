@@ -1,0 +1,37 @@
+.productDetails {
+  padding: 76px 0 78px 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url('../../assets/light_bg.jpg');
+  background-repeat: repeat;
+}
+
+.details {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.image {
+  margin-bottom: 30px;
+}
+
+.descriptionTitle {
+  font-weight: 500;
+}
+
+.description {
+  width: 70%;
+}
+
+.commentsTitle {
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: underline;
+}

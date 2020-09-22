@@ -1,0 +1,36 @@
+@import '../../helpers/mixins.scss';
+
+.homePage {
+  padding: 76px 0 78px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../assets/background.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 60%;
+  color: rgb(238, 238, 238);
+  margin-bottom: 42px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.subTitle {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 26px;
+}
+
+.description {
+  text-align: justify;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}

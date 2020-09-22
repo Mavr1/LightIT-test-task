@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../context/auth/AuthContextProvider';
+import Logo from '../logo/Logo';
 import routes from '../../routes';
 import styles from './styles.module.scss';
 
@@ -10,9 +11,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={['container', styles.headerContainer].join(' ')}>
-        <div className={styles.logo}>
-          <Link to={'/'}>logo</Link>
-        </div>
+        <Logo />
         <nav className={styles.navContainer}>
           <ul className={styles.navList}>
             {routes.map((item) => {
@@ -20,6 +19,7 @@ const Header = () => {
                 item.inNavmenu && (
                   <li key={item.label} className={styles.navItem}>
                     <NavLink
+                      exact={item.exact}
                       to={item.path}
                       className={styles.link}
                       activeClassName={styles.activeLink}

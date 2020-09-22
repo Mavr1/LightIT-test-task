@@ -1,0 +1,15 @@
+.productItem {
+  width: 250px;
+  background-color: rgb(230, 230, 230);
+  border-radius: 10px;
+  padding: 30px 20px;
+  transition: all 200ms;
+}
+
+.productItem:hover {
+  transform: scale(1.02);
+}
+
+.productItem:not(:nth-child(3n)) {
+  margin-right: 50px;
+}

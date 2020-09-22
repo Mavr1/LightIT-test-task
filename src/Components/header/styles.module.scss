@@ -1,12 +1,12 @@
 .header {
-  background-color: #ddd;
+  background-color: #fff;
 }
 
 .headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .navList {
@@ -16,15 +16,25 @@
 .navItem {
   transition: all 200ms;
 }
+
 .navItem:hover {
   transform: scale(1.1);
 }
 
 .navItem:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 40px;
+}
+
+.activeLink {
+  font-weight: 700;
 }
 
 .loginLink {
   padding: 12px;
   border: 1px solid #bbb;
+}
+
+.loginLink:hover {
+  padding: 12px;
+  border: 1px solid #000;
 }
