@@ -1,0 +1,28 @@
+.comment {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 80px 1fr 200px;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: lightgrey 1px solid;
+  padding-bottom: 4px;
+}
+
+.comment:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.author {
+  font-weight: 500;
+}
+
+.date {
+  font-size: 12px;
+  margin-left: auto;
+}
