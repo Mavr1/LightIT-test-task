@@ -18,7 +18,9 @@ const CommentsPage = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    getComments(id).then(({ data }) => setComments(data));
+    getComments(id)
+      .then(({ data }) => setComments(data))
+      .catch((error) => console.error('Error: ', error));
   }, [id]);
 
   return (

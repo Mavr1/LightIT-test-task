@@ -27,6 +27,15 @@ export default [
     inNavmenu: false,
   },
   {
+    path: '/favorites/:id',
+    label: 'Favorite product',
+    exact: false,
+    component: () => <ProductDetailsPage />,
+    private: true,
+    restricted: false,
+    inNavmenu: false,
+  },
+  {
     path: '/products',
     label: 'Products',
     exact: false,
@@ -51,6 +60,6 @@ export default [
     component: () => <FavoritesPage />,
     private: true,
     restricted: false,
-    inNavmenu: false,
+    inNavmenu: true,
   },
 ];

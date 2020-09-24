@@ -19,7 +19,8 @@ const Header = () => {
           <ul className={styles.navList}>
             {routes.map((item) => {
               return (
-                item.inNavmenu && (
+                ((item.inNavmenu && !item.private) ||
+                  (item.inNavmenu && item.private && isAuth)) && (
                   <li key={item.label} className={styles.navItem}>
                     <NavLink
                       exact={item.exact}

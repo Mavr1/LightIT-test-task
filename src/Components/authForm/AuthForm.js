@@ -46,7 +46,7 @@ const AuthForm = () => {
         localStorage.setItem('auth', JSON.stringify({ token, userName }));
         axios.defaults.headers.common['Authorization'] = `Token ${token}`;
       } catch (error) {
-        console.warn('Error: ', error);
+        console.error('Error: ', error);
       }
     } else {
       try {
@@ -56,7 +56,7 @@ const AuthForm = () => {
         axios.defaults.headers.common['Authorization'] = `Token ${token}`;
         message && alert(message);
       } catch (error) {
-        console.warn('Error: ', error);
+        console.error('Error: ', error);
       }
     }
   };

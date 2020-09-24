@@ -37,3 +37,16 @@
   text-decoration: underline;
   margin-bottom: 30px;
 }
+
+.btnFavorites {
+  padding: 10px;
+  background: #fff;
+  border: 2px solid #bbb;
+  font-size: 14px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.btnFavorites:hover {
+  border: 2px solid #000;
+}

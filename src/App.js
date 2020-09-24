@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('auth'));
-    if (data) {
+    if (data.token) {
       setAuth((state) => ({
         ...state,
         isAuth: !!data.token,
