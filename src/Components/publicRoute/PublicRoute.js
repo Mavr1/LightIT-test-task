@@ -3,13 +3,15 @@ import { Route, Redirect } from 'react-router-dom';
 import { AuthContext } from '../../context/auth/AuthContextProvider';
 
 const PublicRoute = ({ component: Component, ...routeProps }) => {
-  const isAuthenticated = useContext(AuthContext);
+  const {
+    auth: { isAuth },
+  } = useContext(AuthContext);
 
   return (
     <Route
       {...routeProps}
       render={(props) =>
-        isAuthenticated && routeProps.restricted ? (
+        isAuth && routeProps.restricted ? (
           <Redirect to="/" />
         ) : (
           <Component {...props} />

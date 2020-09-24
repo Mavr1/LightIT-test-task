@@ -1,0 +1,19 @@
+.userMenu {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.text {
+  margin-right: 12px;
+}
+
+.btnLogout {
+  padding: 10px 12px;
+  border-radius: 4px;
+  display: block;
+  background-color: #ffa125;
+  cursor: pointer;
+}

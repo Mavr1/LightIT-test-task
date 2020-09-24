@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { getComments } from '../../services/api';
+import { AuthContext } from '../../context/auth/AuthContextProvider';
 import Comment from '../../components/comment/Comment';
-import styles from './styles.module.scss';
 import LeaveCommentForm from '../../components/leaveCommentForm/LeaveComentForm';
+import { getComments } from '../../services/api';
+import styles from './styles.module.scss';
 
 const CommentsPage = () => {
+  const {
+    auth: { isAuth },
+  } = useContext(AuthContext);
+
   const {
     params: { id },
   } = useRouteMatch();
@@ -26,7 +31,7 @@ const CommentsPage = () => {
       ) : (
         <p>No comments yet</p>
       )}
-      <LeaveCommentForm />
+      {isAuth && <LeaveCommentForm />}
     </section>
   );
 };

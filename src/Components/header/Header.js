@@ -4,9 +4,12 @@ import { AuthContext } from '../../context/auth/AuthContextProvider';
 import Logo from '../logo/Logo';
 import routes from '../../routes';
 import styles from './styles.module.scss';
+import UserMenu from '../userMenu/UserMenu';
 
 const Header = () => {
-  const isAuth = useContext(AuthContext);
+  const {
+    auth: { isAuth },
+  } = useContext(AuthContext);
 
   return (
     <header className={styles.header}>
@@ -33,7 +36,7 @@ const Header = () => {
           </ul>
         </nav>
         {isAuth ? (
-          <div className={styles.userMenu}>User Menu</div>
+          <UserMenu />
         ) : (
           <div className={styles.loginLink}>
             <Link to={'/login'}>Login | Register</Link>

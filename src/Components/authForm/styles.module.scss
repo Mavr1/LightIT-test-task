@@ -1,0 +1,66 @@
+.formWrapper {
+  background-color: #fff;
+  padding: 30px 24px;
+  margin: 0 auto;
+  width: 340px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 30px 0px rgba(170, 178, 197, 0.5);
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.buttonSwitch {
+  font-size: 1rem;
+  font-family: inherit;
+  text-decoration: underline;
+  color: blue;
+}
+
+.input {
+  width: 100%;
+  height: 52px;
+  background-color: #f5f7fa;
+  border: none;
+  border-radius: 24px;
+  outline: none;
+  padding-left: 27px;
+  font-size: 14px;
+}
+
+.inputPassword {
+  margin-bottom: 40px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  width: 100%;
+  line-height: 35px;
+}
+
+.authBtnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonSubmit {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 auto;
+  width: 80%;
+  height: 45px;
+  border: none;
+  background-color: #fff;
+  border-radius: 17px;
+  text-transform: uppercase;
+  box-shadow: 1px 2px 3px rgba(170, 178, 197, 0.29);
+  color: #52555f;
+  background-color: #ffa125;
+}

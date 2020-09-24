@@ -11,3 +11,13 @@ export const getComments = async (id) => {
   const comments = await axios.get(`/api/reviews/${id}`);
   return comments;
 };
+
+export const register = async (credentials) => {
+  const { data } = await axios.post(`/api/register/`, credentials);
+  return data;
+};
+
+export const logIn = async (credentials) => {
+  const { data } = await axios.post(`/api/login/`, credentials);
+  return data;
+};
