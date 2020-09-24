@@ -1,5 +1,6 @@
+import axios from 'axios';
 import React, { useContext } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
   AuthContext,
   initialAuth,
@@ -15,6 +16,7 @@ const UserMenu = () => {
   const handleLogout = () => {
     setAuth(initialAuth);
     localStorage.removeItem('auth');
+    delete axios.defaults.headers.common['Authorization'];
     history.replace('/');
   };
 

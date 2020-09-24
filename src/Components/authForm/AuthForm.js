@@ -44,7 +44,7 @@ const AuthForm = () => {
         const { token, success } = await register(regParams);
         setAuth((state) => ({ ...state, isAuth: success, name: userName }));
         localStorage.setItem('auth', JSON.stringify({ token, userName }));
-        axios.defaults.headers.common['Authorization'] = token;
+        axios.defaults.headers.common['Authorization'] = `Token ${token}`;
       } catch (error) {
         console.warn('Error: ', error);
       }
@@ -53,7 +53,7 @@ const AuthForm = () => {
         const { token, success, message } = await logIn(regParams);
         setAuth((state) => ({ ...state, isAuth: success, name: userName }));
         localStorage.setItem('auth', JSON.stringify({ token, userName }));
-        axios.defaults.headers.common['Authorization'] = token;
+        axios.defaults.headers.common['Authorization'] = `Token ${token}`;
         message && alert(message);
       } catch (error) {
         console.warn('Error: ', error);

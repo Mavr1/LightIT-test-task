@@ -12,6 +12,11 @@ export const getComments = async (id) => {
   return comments;
 };
 
+export const addComment = async (id, payload) => {
+  const data = await axios.post(`/api/reviews/${id}`, payload);
+  return data;
+};
+
 export const register = async (credentials) => {
   const { data } = await axios.post(`/api/register/`, credentials);
   return data;

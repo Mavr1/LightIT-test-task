@@ -10,8 +10,13 @@
   height: 150px;
   border-radius: 10px;
   resize: none;
+  margin-bottom: 10px;
 }
 
 .button {
   display: block;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background-color: #ffa125;
+  cursor: pointer;
 }

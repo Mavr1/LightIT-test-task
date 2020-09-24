@@ -14,6 +14,7 @@ const CommentsPage = () => {
   const {
     params: { id },
   } = useRouteMatch();
+
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const CommentsPage = () => {
       ) : (
         <p>No comments yet</p>
       )}
-      {isAuth && <LeaveCommentForm />}
+      {isAuth && <LeaveCommentForm productId={id} setComments={setComments} />}
     </section>
   );
 };

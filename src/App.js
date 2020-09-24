@@ -19,7 +19,7 @@ function App() {
         isAuth: !!data.token,
         name: data.userName,
       }));
-      axios.defaults.headers.common['Authorization'] = data.token;
+      axios.defaults.headers.common['Authorization'] = `Token ${data.token}`;
     }
   }, []);
 
