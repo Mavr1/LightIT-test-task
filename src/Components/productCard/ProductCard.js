@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 const ProductCard = ({ product, pathUrl, isFavorite }) => {
   const { id, title, img } = product;
-  const url = 'http://smktesting.herokuapp.com/static/';
+  const url = 'https://smktesting.herokuapp.com/static/';
   return (
     <li className={styles.productItem}>
       <Link to={{ pathname: `${pathUrl}/${id}`, state: { isFavorite } }}>

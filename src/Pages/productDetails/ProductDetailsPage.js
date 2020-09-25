@@ -40,7 +40,7 @@ const ProductDetailsPage = () => {
 
   const { title, img, text } = product;
 
-  const uri = 'http://smktesting.herokuapp.com/static/';
+  const uri = 'https://smktesting.herokuapp.com/static/';
 
   const handleFavorites = () => {
     isFavorite
