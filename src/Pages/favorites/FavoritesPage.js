@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import ProductCard from '../../components/productCard/ProductCard';
-import { getProducts } from '../../services/api';
+import { Context } from '../../context/ContextProvider';
+import { sortFavorites } from '../../helpers/helpers';
 import styles from './styles.module.scss';
 
 const FavoritesPage = () => {
+  const {
+    context: { products },
+  } = useContext(Context);
+
   const { url } = useRouteMatch();
-  const [products, setProducts] = useState([]);
+
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    getProducts()
-      .then(({ data }) => setProducts(data))
-      .catch((error) => console.error('Error: ', error));
-  }, []);
+    const favorites = sortFavorites(products);
+    setFavorites(favorites);
+  }, [products]);
 
   return (
     <section className={styles.products}>
       <div className="container">
         <h1 className={styles.title}>Your favorites Products</h1>
         <ul className={styles.productsList}>
-          {products.map((item) => (
+          {favorites?.map((item) => (
             <ProductCard key={item.id} product={item} pathUrl={url} />
           ))}
         </ul>
