@@ -5,16 +5,16 @@ import routes from './routes';
 import PrivateRoute from './components/privateRoute/PrivateRoute';
 import PublicRoute from './components/publicRoute/PublicRoute';
 import Header from './components/header/Header';
-import { AuthContext } from './context/auth/AuthContextProvider';
+import { Context } from './context/ContextProvider';
 import './App.scss';
 
 function App() {
-  const { setAuth } = useContext(AuthContext);
+  const { setContext } = useContext(Context);
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('auth'));
     if (data?.token) {
-      setAuth((state) => ({
+      setContext((state) => ({
         ...state,
         isAuth: !!data.token,
         name: data.userName,

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { AuthContext } from '../../context/auth/AuthContextProvider';
+import { Context } from '../../context/ContextProvider';
 import Comment from '../../components/comment/Comment';
 import LeaveCommentForm from '../../components/leaveCommentForm/LeaveComentForm';
 import { getComments } from '../../services/api';
@@ -8,8 +8,8 @@ import styles from './styles.module.scss';
 
 const CommentsPage = () => {
   const {
-    auth: { isAuth },
-  } = useContext(AuthContext);
+    context: { isAuth },
+  } = useContext(Context);
 
   const {
     params: { id },

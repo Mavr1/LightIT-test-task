@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { NavLink, Route, useRouteMatch } from 'react-router-dom';
 import CommentsPage from '../comments/CommentsPage';
 import { favoriteAdd, favoriteRemove } from '../../helpers/helpers';
-import { AuthContext } from '../../context/auth/AuthContextProvider';
+import { Context } from '../../context/ContextProvider';
 import { getProducts } from '../../services/api';
 import styles from './styles.module.scss';
 
@@ -14,8 +14,8 @@ const ProductDetailsPage = () => {
   } = useRouteMatch();
 
   const {
-    auth: { isAuth },
-  } = useContext(AuthContext);
+    context: { isAuth },
+  } = useContext(Context);
 
   const [product, setProduct] = useState({});
 

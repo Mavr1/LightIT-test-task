@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
-import { AuthContext } from '../../context/auth/AuthContextProvider';
+import { Context } from '../../context/ContextProvider';
 import { register, logIn } from '../../services/api';
 import styles from './styles.module.scss';
 
@@ -9,7 +9,7 @@ const AuthForm = () => {
   const [password, setPassword] = useState('');
   const [typeRegister, setTypeRegister] = useState(false);
 
-  const { setAuth } = useContext(AuthContext);
+  const { setContext } = useContext(Context);
 
   const handleInputUserName = (e) => {
     e.preventDefault();
@@ -42,18 +42,22 @@ const AuthForm = () => {
     if (typeRegister) {
       try {
         const { token, success } = await register(regParams);
-        setAuth((state) => ({ ...state, isAuth: success, name: userName }));
+        setContext((state) => ({ ...state, isAuth: success, name: userName }));
         localStorage.setItem('auth', JSON.stringify({ token, userName }));
-        axios.defaults.headers.common['Authorization'] = `Token ${token}`;
+        if (token) {
+          axios.defaults.headers.common['Authorization'] = `Token ${token}`;
+        }
       } catch (error) {
         console.error('Error: ', error);
       }
     } else {
       try {
         const { token, success, message } = await logIn(regParams);
-        setAuth((state) => ({ ...state, isAuth: success, name: userName }));
+        setContext((state) => ({ ...state, isAuth: success, name: userName }));
         localStorage.setItem('auth', JSON.stringify({ token, userName }));
-        axios.defaults.headers.common['Authorization'] = `Token ${token}`;
+        if (token) {
+          axios.defaults.headers.common['Authorization'] = `Token ${token}`;
+        }
         message && alert(message);
       } catch (error) {
         console.error('Error: ', error);

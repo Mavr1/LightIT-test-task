@@ -1,21 +1,22 @@
 import axios from 'axios';
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import {
-  AuthContext,
-  initialAuth,
-} from '../../context/auth/AuthContextProvider';
+import { Context, initialContext } from '../../context/ContextProvider';
 import styles from './styles.module.scss';
 
 const UserMenu = () => {
   const history = useHistory();
-  const context = useContext(AuthContext);
-  const { name } = context.auth;
-  const { setAuth } = context;
+  const context = useContext(Context);
+  const {
+    context: { name },
+  } = context;
+  const { setContext } = context;
 
   const handleLogout = () => {
-    setAuth(initialAuth);
-    localStorage.removeItem('auth');
+    setContext(initialContext);
+    const data = localStorage.getItem('context');
+    const updatedData = { ...JSON.parse(data), name: '', isAuth: false };
+    localStorage.setItem('context', JSON.stringify(updatedData));
     delete axios.defaults.headers.common['Authorization'];
     history.replace('/');
   };

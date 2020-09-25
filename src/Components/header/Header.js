@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../context/auth/AuthContextProvider';
+import { Context } from '../../context/ContextProvider';
 import Logo from '../logo/Logo';
 import routes from '../../routes';
 import styles from './styles.module.scss';
@@ -8,8 +8,8 @@ import UserMenu from '../userMenu/UserMenu';
 
 const Header = () => {
   const {
-    auth: { isAuth },
-  } = useContext(AuthContext);
+    context: { isAuth },
+  } = useContext(Context);
 
   return (
     <header className={styles.header}>
