@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import styles from './styles.module.scss';
-import { getProducts } from '../../services/api';
 import ProductCard from '../../components/productCard/ProductCard';
 import { useRouteMatch } from 'react-router-dom';
+import { Context } from '../../context/ContextProvider';
 
 const ProductsPage = () => {
-  const { url } = useRouteMatch();
-  const [products, setProducts] = useState([]);
+  const {
+    context: { products },
+  } = useContext(Context);
 
-  useEffect(() => {
-    getProducts()
-      .then(({ data }) => setProducts(data))
-      .catch((error) => console.error('Error: ', error));
-  }, []);
+  const { url } = useRouteMatch();
 
   return (
     <section className={styles.products}>

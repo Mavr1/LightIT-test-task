@@ -7,6 +7,7 @@ import PublicRoute from './components/publicRoute/PublicRoute';
 import Header from './components/header/Header';
 import { Context } from './context/ContextProvider';
 import './App.scss';
+import { getProducts } from './services/api';
 
 function App() {
   const { setContext } = useContext(Context);
@@ -21,7 +22,13 @@ function App() {
       }));
       axios.defaults.headers.common['Authorization'] = `Token ${data.token}`;
     }
-  }, []);
+  }, [setContext]);
+
+  useEffect(() => {
+    getProducts()
+      .then(({ data }) => setContext((state) => ({ ...state, products: data })))
+      .catch((error) => console.error('Error: ', error));
+  }, [setContext]);
 
   return (
     <>
